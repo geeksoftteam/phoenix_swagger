@@ -126,7 +126,7 @@ defmodule Mix.Tasks.Phoenix.Swagger.Generate do
       |> Keyword.get(:host, "localhost")
     port =
       endpoint_config
-      |> Keyword.get(:http, [{:port, @default_port}])
+      |> Keyword.get(:url, [{:port, @default_port}])
       |> Keyword.get(:port, @default_port)
     https = Keyword.get(endpoint_config, :https, nil)
     swagger_map = Map.put_new(swagger_map, :host, host <> ":" <> port_to_string(port))
