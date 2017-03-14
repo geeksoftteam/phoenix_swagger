@@ -3,13 +3,13 @@ defmodule PhoenixSwagger.Mixfile do
 
   def project do
     [app: :phoenix_swagger,
-     version: "0.3.0",
+     version: "0.3.3",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps,
-     description: description,
-     package: package]
+     deps: deps(),
+     description: description(),
+     package: package()]
   end
 
   # Configuration for the OTP application
@@ -32,7 +32,7 @@ defmodule PhoenixSwagger.Mixfile do
   defp deps do
     [
         {:poison, "~> 1.5 or ~> 2.0"},
-        {:ex_json_schema, "~> 0.5.1"},
+        {:ex_json_schema, "~> 0.5.1", optional: :true},
         {:plug, "~> 1.1"}
     ]
   end
